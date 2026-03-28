@@ -112,12 +112,15 @@ app.listen(PORT, () => {
     console.log(`🚀 Server lari kencang di http://localhost:${PORT}`);
 });
 
-const nodemailer = require('nodemailer');
+//const nodemailer = require('nodemailer');
 const { error } = require('console');
 app.use(express.urlencoded({extended:true}))
 
-app.post('/send-message', async (req, res) => {
-    const {nama,email,pesan} = req.body;
+app.post('/send-message', (req, res) => {
+    res.send("Form jalan tanpa email");
+});
+//app.post('/send-message', async (req, res) => {
+    //const {nama,email,pesan} = req.body;
 
     let transporter = nodemailer.createTransport({
         service:'gmail',
