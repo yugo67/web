@@ -135,7 +135,7 @@ app.post('/send-message', (req, res) => {
     });
     let mailOptions = {
         from:email,
-        to: 'Codingkita618@gmail.com',
+        to: 'info@codingkita.com',
         subject: `Pesan Baru dari ${nama} (codingkita)`,
         text: `Nama: ${nama}\nemail:${email}\npesan:${pesan}`
     };
