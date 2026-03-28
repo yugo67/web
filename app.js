@@ -9,6 +9,10 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Middleware untuk file statis (CSS, Images, JS)
 app.use(express.static(path.join(__dirname, 'public')));
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
 
 // Route Landing Page
 app.get('/', (req, res) => {
